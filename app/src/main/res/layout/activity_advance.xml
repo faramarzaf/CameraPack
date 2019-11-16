@@ -7,27 +7,35 @@
     android:orientation="vertical"
     tools:context=".advance.AdvanceActivity">
 
-    <SurfaceView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/sv"
-        />
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        android:id="@+id/iv"
-        />
+            <SurfaceView
+                android:id="@+id/sv"
+                android:layout_width="match_parent"
+                android:layout_height="370dp"
+                  />
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+
+                />
 
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Take photo"
-        android:id="@+id/btnTakePhoto"
-        />
-
+            <Button
+                android:id="@+id/btnTakePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Take photo" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
