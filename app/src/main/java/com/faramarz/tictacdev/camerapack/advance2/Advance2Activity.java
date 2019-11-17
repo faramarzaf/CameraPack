@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
-
 import com.faramarz.tictacdev.camerapack.R;
 
 public class Advance2Activity extends AppCompatActivity {
@@ -75,10 +74,9 @@ public class Advance2Activity extends AppCompatActivity {
 
         mCamera.startPreview();
 
-
     }
 
-    private void safeCameraOpen(int id) {
+  /*  private void safeCameraOpen(int id) {
 
         try {
             releaseCameraAndPreview();
@@ -96,7 +94,7 @@ public class Advance2Activity extends AppCompatActivity {
             mCamera = null;
         }
     }
-
+*/
 
     private int findFrontFacingCamera() {
 

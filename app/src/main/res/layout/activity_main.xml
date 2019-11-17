@@ -26,12 +26,12 @@
         android:text="advance 2" />
 
 
+
     <Button
-        android:id="@+id/btnRecordVideo"
+        android:id="@+id/btnRecordVideo1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Capture video" />
-
+        android:text="Capture video sample 1" />
 
 
     <Button
@@ -39,12 +39,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Capture video sample 2" />
-
-
-    <Button
-        android:id="@+id/btnRecordVideo3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Capture video sample 3" />
 
 </LinearLayout>

@@ -21,9 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".video.Sample3.RecordVideoActivity3"></activity>
-        <activity android:name=".video.RecordVideoActivity2" />
-        <activity android:name=".video.RecordVideoActivity" />
+        <activity android:name=".video.Sample3.RecordVideoActivity2"></activity>
+        <activity android:name=".video.RecordVideoActivity1" />
         <activity android:name=".advance2.PictureActivity" />
         <activity android:name=".advance2.Advance2Activity" />
         <activity android:name=".advance.AdvanceActivity" />

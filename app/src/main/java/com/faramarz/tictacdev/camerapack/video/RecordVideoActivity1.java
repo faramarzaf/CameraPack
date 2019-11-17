@@ -12,7 +12,7 @@ import android.widget.VideoView;
 
 import com.faramarz.tictacdev.camerapack.R;
 
-public class RecordVideoActivity2 extends AppCompatActivity implements View.OnClickListener {
+public class RecordVideoActivity1 extends AppCompatActivity implements View.OnClickListener {
 
     VideoView videoView;
     Uri videoFileUri;
@@ -22,7 +22,7 @@ public class RecordVideoActivity2 extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_record_video2);
+        setContentView(R.layout.activity_record_video1);
         bind();
         clickEvents();
         playVideoButton.setEnabled(false);
@@ -33,7 +33,6 @@ public class RecordVideoActivity2 extends AppCompatActivity implements View.OnCl
         captureVideoButton = this.findViewById(R.id.CaptureVideoButton);
         playVideoButton = this.findViewById(R.id.PlayVideoButton);
         captureWithoutDataVideoButton = this.findViewById(R.id.CaptureVideoWithoutDataButton);
-
     }
 
     private void clickEvents() {
@@ -44,7 +43,6 @@ public class RecordVideoActivity2 extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
-
         if (v == captureVideoButton) {
             Intent captureVideoIntent = new Intent(android.provider.MediaStore.ACTION_VIDEO_CAPTURE);
             startActivityForResult(captureVideoIntent, VIDEO_CAPTURED);

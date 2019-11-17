@@ -5,31 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".video.RecordVideoActivity2">
+    tools:context=".video.Sample3.RecordVideoActivity2">
 
 
     <Button
-        android:id="@+id/CaptureVideoButton"
-        android:layout_width="fill_parent"
+        android:id="@+id/btnStart"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Capture Video" />
+        android:text="start" />
+
 
     <Button
-        android:id="@+id/CaptureVideoWithoutDataButton"
-        android:layout_width="fill_parent"
+        android:id="@+id/btnStop"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Capture Video without Data" />
+        android:text="stop" />
 
-    <Button
-        android:id="@+id/PlayVideoButton"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Play Video" />
 
-    <VideoView
-        android:id="@+id/VideoView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+    <SurfaceView
+        android:id="@+id/surfaceview3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>
