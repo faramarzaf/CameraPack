@@ -21,12 +21,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
         <activity android:name=".video.Sample3.RecordVideoActivity2"></activity>
+
         <activity android:name=".video.RecordVideoActivity1" />
+
         <activity android:name=".advance2.PictureActivity" />
+
         <activity android:name=".advance2.Advance2Activity" />
-        <activity android:name=".advance.AdvanceActivity" />
+
+        <activity
+            android:name=".advance.AdvanceActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name=".simple.SimpleActivity" />
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,6 +44,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+
+    </application>
 </manifest>

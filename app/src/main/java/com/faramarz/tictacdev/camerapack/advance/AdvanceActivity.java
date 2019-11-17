@@ -64,12 +64,6 @@ public class AdvanceActivity extends AppCompatActivity implements SurfaceHolder.
 
     }
 
-    private void bind() {
-        imageView = findViewById(R.id.iv);
-        surfaceView = findViewById(R.id.sv);
-        btnTakePhoto = findViewById(R.id.btnTakePhoto);
-    }
-
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         try {
@@ -89,6 +83,18 @@ public class AdvanceActivity extends AppCompatActivity implements SurfaceHolder.
     }
 
 
+    @Override
+    public void surfaceDestroyed(SurfaceHolder holder) {
+        camera.stopPreview();
+        camera.release();
+        camera = null;
+    }
+
+    @Override
+    public void onClick(View v) {
+        camera.takePicture(null, null, pictureCallback);
+    }
+
     private void fixCameraRotationPreview() {
         Camera.Parameters parameters = camera.getParameters();
         List<Camera.Size> previewSizes = parameters.getSupportedPreviewSizes();
@@ -106,37 +112,6 @@ public class AdvanceActivity extends AppCompatActivity implements SurfaceHolder.
         camera.startPreview();
     }
 
-
-    @Override
-    public void surfaceDestroyed(SurfaceHolder holder) {
-        camera.stopPreview();
-        camera.release();
-        camera = null;
-    }
-
-
-    @Override
-    public void onClick(View v) {
-        camera.takePicture(null, null, pictureCallback);
-    }
-
-    void getPermissions() {
-        Dexter.withActivity(this)
-                .withPermission(Manifest.permission.CAMERA)
-                .withListener(new PermissionListener() {
-                    @Override
-                    public void onPermissionGranted(PermissionGrantedResponse response) {/* ... */}
-
-                    @Override
-                    public void onPermissionDenied(PermissionDeniedResponse response) {/* ... */}
-
-                    @Override
-                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {/* ... */}
-                }).check();
-
-
-    }
-
     private void setActualCameraPreview() {
         if (camera.getParameters() != null) {
             Camera.Parameters parameters = camera.getParameters();
@@ -146,6 +121,7 @@ public class AdvanceActivity extends AppCompatActivity implements SurfaceHolder.
         }
 
     }
+
 
     private Camera.Size getOptimalPreviewSize(List<Camera.Size> sizes, int w, int h) {
         final double ASPECT_TOLERANCE = 0.05;
@@ -173,6 +149,27 @@ public class AdvanceActivity extends AppCompatActivity implements SurfaceHolder.
             }
         }
         return optimalSize;
+    }
+
+    void getPermissions() {
+        Dexter.withActivity(this)
+                .withPermission(Manifest.permission.CAMERA)
+                .withListener(new PermissionListener() {
+                    @Override
+                    public void onPermissionGranted(PermissionGrantedResponse response) {/* ... */}
+
+                    @Override
+                    public void onPermissionDenied(PermissionDeniedResponse response) {/* ... */}
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {/* ... */}
+                }).check();
+    }
+
+    private void bind() {
+        imageView = findViewById(R.id.iv);
+        surfaceView = findViewById(R.id.sv);
+        btnTakePhoto = findViewById(R.id.btnTakePhoto);
     }
 
 }
